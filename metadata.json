@@ -1,0 +1,6 @@
+{
+  "name": "嚴島神社 CAD図面システム (A2 DXF 3枚組)",
+  "description": "嚴島神社をイメージした配置図(1:600)・社殿群平面図(1:300)・大鳥居及び本社南面立面図(1:200)のA2 3枚組高精度CAD・DXFデータ生成＆閲覧アプリケーション",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
