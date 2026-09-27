@@ -7,7 +7,7 @@
 ### AI-Powered Architectural CAD Drawing & DXF Generator with Real-time Web Preview
 **自然言語プロンプトから建築CAD図面（ASCII DXF）を自動生成し、ブラウザ上でリアルタイム2D/3Dプレビュー＆ダウンロード**
 
-[![Gemini 2.5 Pro](https://img.shields.io/badge/Model-Gemini%202.5%20Pro-4285F4?style=for-the-badge&logo=google)](https://aistudio.google.com/app/apps/053b7942-6942-4288-b95a-30bf9e867904?showPreview=true&showAssistant=true)
+[![Gemini 2.5 Pro](https://img.shields.io/badge/Model-Gemini%202.5%20Pro-4285F4?style=for-the-badge&logo=google)](https://ai.studio/apps/053b7942-6942-4288-b95a-30bf9e867904)
 [![Built with AI Studio](https://img.shields.io/badge/Built%20with-AI%20Studio-E37400?style=for-the-badge&logo=google)](https://aistudio.google.com/apps)
 [![License: MIT](https://img.shields.io/badge/License-MIT-10B981?style=for-the-badge)](LICENSE)
 
