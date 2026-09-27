@@ -17,6 +17,7 @@
 - [x] GitHub Pages 自動デプロイ CI/CD ワークフロー配備 (`.github/workflows/deploy.yml`)
 - [x] Vite base 相対パス設定 (`base: './'`)
 - [x] エージェント標準仕様 7大ファイル完備 (`GEMINI.md`, `skills.md`, `ハーネス.md`, `ループAgent.md`, `フック.md`, `task-list.md`, `機能一覧.md`)
+- [x] HTML構文リント警告解消 (`index.html` DOCTYPE大文字統一 & `<meta>` セルフクロージング除去)
 - [x] Obsidian Vault ナレッジノート（`CADZUMEN.md` / `AIStudio/CADZUMEN.md`）作成・WikiLink統合
 - [x] マスターカタログ（`projects_master.json` / `全アプリ統合一覧.md`）自動同期
 
