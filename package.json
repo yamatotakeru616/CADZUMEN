@@ -1,0 +1,23 @@
+{
+  "name": "cadzumen",
+  "version": "0.1.0",
+  "description": "AI-Powered Architectural CAD Drawing & DXF Generator with Real-time 2D/3D Web Preview",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y serve . -l 3000",
+    "start": "npx -y serve . -l 3000"
+  },
+  "keywords": [
+    "cad",
+    "dxf",
+    "architecture",
+    "floorplan",
+    "gemini",
+    "ai-studio",
+    "bim-cim",
+    "canvas",
+    "webcad"
+  ],
+  "author": "yamatotakeru616",
+  "license": "MIT"
+}
