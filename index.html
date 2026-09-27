@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CADZUMEN | AI Architectural CAD Drawing & DXF Generator</title>
+  <title>CADZUMEN | AI Architectural CAD Drawing &amp; DXF Generator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;family=Outfit:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,20 +17,20 @@
       <div class="brand-icon">📐</div>
       <div class="brand-title">CADZUMEN</div>
       <span class="brand-badge">Gemini 2.5 Pro Powered</span>
-      <span class="brand-badge" style="border-color: rgba(59, 130, 246, 0.4); color: #60a5fa;">Architectural 2D/3D</span>
+      <span class="brand-badge badge-blue">Architectural 2D/3D</span>
     </div>
     <div class="header-actions">
-      <a href="https://aistudio.google.com/app/apps/053b7942-6942-4288-b95a-30bf9e867904?showPreview=true&showAssistant=true" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" title="Google AI Studio 原本アプリを開く">
+      <a href="https://aistudio.google.com/app/apps/053b7942-6942-4288-b95a-30bf9e867904?showPreview=true&amp;showAssistant=true" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" title="Google AI Studio 原本アプリを開く">
         🤖 AI Studio 原本
       </a>
       <a href="https://github.com/yamatotakeru616/CADZUMEN" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" title="GitHub リポジトリ">
         🐙 GitHub
       </a>
-      <button id="btnExportDxf" class="btn btn-success">
+      <button id="btnExportDxf" type="button" class="btn btn-success">
         💾 DXF ダウンロード
       </button>
       <!-- 右上HUD (憲章規定) -->
-      <button id="btnOpenHud" class="btn btn-primary" title="仕様・ナレッジHUDを開く">
+      <button id="btnOpenHud" type="button" class="btn btn-primary" title="仕様・ナレッジHUDを開く">
         ⚙️ / 📋 仕様・ナレッジHUD
       </button>
     </div>
@@ -41,19 +41,18 @@
     <!-- Sidebar -->
     <aside class="app-sidebar">
       <div class="sidebar-scroll">
-        
         <!-- Architectural Presets -->
         <div class="section-box">
           <div class="section-title">
             <span>🏛️ 建築図面プリセット</span>
-            <span style="font-size:11px; text-transform:none; color:var(--accent-cyan);">Click to apply</span>
+            <span class="section-sub-cyan">Click to apply</span>
           </div>
           <div class="preset-pills">
-            <button class="pill-btn" data-preset="1ldk">1LDK アパート平面図</button>
-            <button class="pill-btn" data-preset="3ldk">木造2階建 3LDK平面図</button>
-            <button class="pill-btn" data-preset="office">オフィスフロア計画図</button>
-            <button class="pill-btn" data-preset="section">標準矩計図 (断面外構)</button>
-            <button class="pill-btn" data-preset="furniture">オフィス会議室・家具配置</button>
+            <button type="button" class="pill-btn" data-preset="1ldk">1LDK アパート平面図</button>
+            <button type="button" class="pill-btn" data-preset="3ldk">木造2階建 3LDK平面図</button>
+            <button type="button" class="pill-btn" data-preset="office">オフィスフロア計画図</button>
+            <button type="button" class="pill-btn" data-preset="section">標準矩計図 (断面外構)</button>
+            <button type="button" class="pill-btn" data-preset="furniture">オフィス会議室・家具配置</button>
           </div>
         </div>
 
@@ -61,14 +60,14 @@
         <div class="section-box">
           <div class="section-title">
             <span>💬 プロンプト作図指示</span>
-            <span id="genStatus" style="font-size:11px; text-transform:none; color:var(--text-dim);">Ready</span>
+            <span id="genStatus" class="section-sub-dim">Ready</span>
           </div>
           <textarea id="promptInput" class="prompt-area" placeholder="例: 間口8m×奥行き10m、南側にLDK20帖、東側に寝室8帖、玄関と水回りを北側に配置した木造住宅平面図をDXFで作図して"></textarea>
-          <div style="display:flex; gap:8px; margin-top:8px;">
-            <button id="btnGenerate" class="btn btn-primary" style="flex:1;">
+          <div class="btn-row">
+            <button id="btnGenerate" type="button" class="btn btn-primary flex-1">
               ⚡ 図面自動生成 (CAD Render)
             </button>
-            <button id="btnResetView" class="btn btn-ghost" title="ビューリセット">
+            <button id="btnResetView" type="button" class="btn btn-ghost" title="ビューリセット">
               🔄 センタリング
             </button>
           </div>
@@ -79,10 +78,10 @@
           <div class="section-title">
             <span>🔑 Gemini API Key (任意)</span>
           </div>
-          <p style="font-size:11px; color:var(--text-muted); margin-bottom:6px;">
+          <p class="hint-text">
             API Keyを設定すると直接Gemini 2.5 Proに接続して未知の図面を動的DXF化できます（未入力時は内蔵高精度CADエンジンで即時生成）。
           </p>
-          <input type="password" id="apiKeyInput" class="api-key-input" placeholder="AIzaSy... (Gemini API Key)">
+          <input type="password" id="apiKeyInput" class="api-key-input" placeholder="AIzaSy... (Gemini API Key)" autocomplete="off">
         </div>
 
         <!-- Layer Control -->
@@ -92,27 +91,27 @@
           </div>
           <div class="layer-list" id="layerList">
             <label class="layer-item">
-              <span><span class="layer-dot" style="background:#3b82f6;"></span>WALL (壁芯・躯体)</span>
+              <span><span class="layer-dot dot-wall"></span>WALL (壁芯・躯体)</span>
               <input type="checkbox" checked data-layer="WALL">
             </label>
             <label class="layer-item">
-              <span><span class="layer-dot" style="background:#06b6d4;"></span>DOOR_WINDOW (建具・開口部)</span>
+              <span><span class="layer-dot dot-door"></span>DOOR_WINDOW (建具・開口部)</span>
               <input type="checkbox" checked data-layer="DOOR_WINDOW">
             </label>
             <label class="layer-item">
-              <span><span class="layer-dot" style="background:#10b981;"></span>ROOM_NAME (部屋名・室名)</span>
+              <span><span class="layer-dot dot-room"></span>ROOM_NAME (部屋名・室名)</span>
               <input type="checkbox" checked data-layer="ROOM_NAME">
             </label>
             <label class="layer-item">
-              <span><span class="layer-dot" style="background:#f59e0b;"></span>DIMENSION (寸法線・引出線)</span>
+              <span><span class="layer-dot dot-dim"></span>DIMENSION (寸法線・引出線)</span>
               <input type="checkbox" checked data-layer="DIMENSION">
             </label>
             <label class="layer-item">
-              <span><span class="layer-dot" style="background:#8b5cf6;"></span>FURNITURE (家具・衛生器具)</span>
+              <span><span class="layer-dot dot-furn"></span>FURNITURE (家具・衛生器具)</span>
               <input type="checkbox" checked data-layer="FURNITURE">
             </label>
             <label class="layer-item">
-              <span><span class="layer-dot" style="background:#64748b;"></span>GRID_AXIS (通り芯・グリッド)</span>
+              <span><span class="layer-dot dot-grid"></span>GRID_AXIS (通り芯・グリッド)</span>
               <input type="checkbox" checked data-layer="GRID_AXIS">
             </label>
           </div>
@@ -123,27 +122,26 @@
           <div class="section-title">
             <span>📊 図面エンティティ統計</span>
           </div>
-          <div style="font-size:12px; display:flex; flex-direction:column; gap:4px; color:var(--text-muted);" id="drawingStats">
-            <div>線分 (LINES): <span id="statLines" style="color:var(--text-main); font-weight:600;">0</span></div>
-            <div>ポリライン (POLYLINES): <span id="statPolylines" style="color:var(--text-main); font-weight:600;">0</span></div>
-            <div>円弧/円 (ARCS/CIRCLES): <span id="statArcs" style="color:var(--text-main); font-weight:600;">0</span></div>
-            <div>文字注記 (TEXTS): <span id="statTexts" style="color:var(--text-main); font-weight:600;">0</span></div>
-            <div>全体バウンディング: <span id="statBounds" style="color:var(--accent-cyan); font-family:var(--font-mono);">0 × 0 mm</span></div>
+          <div class="stats-list" id="drawingStats">
+            <div>線分 (LINES): <span id="statLines" class="stat-val">0</span></div>
+            <div>ポリライン (POLYLINES): <span id="statPolylines" class="stat-val">0</span></div>
+            <div>円弧/円 (ARCS/CIRCLES): <span id="statArcs" class="stat-val">0</span></div>
+            <div>文字注記 (TEXTS): <span id="statTexts" class="stat-val">0</span></div>
+            <div>全体バウンディング: <span id="statBounds" class="stat-bounds">0 × 0 mm</span></div>
           </div>
         </div>
-
       </div>
     </aside>
 
     <!-- Main Canvas View -->
     <main class="canvas-container">
       <canvas id="cadCanvas"></canvas>
-      
+
       <!-- Zoom/Pan floating controls -->
       <div class="zoom-controls">
-        <button class="zoom-btn" id="btnZoomIn" title="ズームイン">+</button>
-        <button class="zoom-btn" id="btnZoomOut" title="ズームアウト">-</button>
-        <button class="zoom-btn" id="btnFitScreen" title="全体表示 (Fit)">⛶</button>
+        <button class="zoom-btn" id="btnZoomIn" type="button" title="ズームイン">+</button>
+        <button class="zoom-btn" id="btnZoomOut" type="button" title="ズームアウト">-</button>
+        <button class="zoom-btn" id="btnFitScreen" type="button" title="全体表示 (Fit)">⛶</button>
       </div>
 
       <!-- Realtime Coordinates Overlay -->
@@ -158,9 +156,9 @@
   <!-- Bottom DXF Code & Inspector Panel -->
   <div class="inspector-panel">
     <div class="inspector-tabs">
-      <button class="tab-btn active" data-tab="dxf">📄 ASCII DXF コード (AutoCAD / ezdxf互換)</button>
-      <button class="tab-btn" data-tab="json">🧬 内部ジオメトリ JSON</button>
-      <button class="tab-btn" data-tab="log">📋 生成・パースログ</button>
+      <button class="tab-btn active" type="button" data-tab="dxf">📄 ASCII DXF コード (AutoCAD / ezdxf互換)</button>
+      <button class="tab-btn" type="button" data-tab="json">🧬 内部ジオメトリ JSON</button>
+      <button class="tab-btn" type="button" data-tab="log">📋 生成・パースログ</button>
     </div>
     <pre class="inspector-content" id="inspectorContent">// DXF output will appear here...</pre>
   </div>
@@ -169,25 +167,25 @@
   <div class="modal-backdrop" id="hudModal">
     <div class="modal-card">
       <div class="modal-header">
-        <h2 style="font-size:16px; font-weight:700; display:flex; align-items:center; gap:8px;">
+        <h2 class="modal-title">
           <span>⚙️ / 📋 CADZUMEN 仕様・ナレッジHUD</span>
         </h2>
-        <button class="close-btn" id="btnCloseHud">&times;</button>
+        <button class="close-btn" id="btnCloseHud" type="button">&times;</button>
       </div>
       <div class="modal-body">
-        <p><strong>プロジェクト名:</strong> <code>CADZUMEN</code> (AI Architectural CAD & DXF Platform)</p>
+        <p><strong>プロジェクト名:</strong> <code>CADZUMEN</code> (AI Architectural CAD &amp; DXF Platform)</p>
         <p><strong>開発者・組織:</strong> Google AI Studio ✕ Antigravity Autonomous Agent</p>
         <p><strong>モデル:</strong> Gemini 2.5 Pro (Thinking / Mathematical Geometry Optimization)</p>
 
         <h3>🎯 目的・コア機能</h3>
         <ul>
           <li>自然言語プロンプトから木造・RC造建築図面（平面図、立面図、矩計図、オフィス家具計画）の幾何整合性を解析。</li>
-          <li>標準 ASCII DXF (AC1009 / AutoCAD R12 & 2000互換) のエンティティ（LINE, POLYLINE, TEXT, ARC, CIRCLE）を完全自動出力。</li>
+          <li>標準 ASCII DXF (AC1009 / AutoCAD R12 &amp; 2000互換) のエンティティ（LINE, POLYLINE, TEXT, ARC, CIRCLE）を完全自動出力。</li>
           <li>ブラウザ上の高性能 HTML5 Canvas によるリアルタイム 2D CAD レンダリング（パン、ズーム、レイヤー制御、寸法線表示）。</li>
           <li>AutoCAD、Jw_cad、Vectorworks、QGIS 等への完全連携対応。</li>
         </ul>
 
-        <h3>📁 ナレッジ & 連携ファイル (Obsidian WikiLink)</h3>
+        <h3>📁 ナレッジ &amp; 連携ファイル (Obsidian WikiLink)</h3>
         <ul>
           <li>[[00_Knowledge/Projects/CADZUMEN|CADZUMEN 仕様ノート]]</li>
           <li>[[00_Knowledge/Projects/AIStudio/CADZUMEN|AI Studio CADZUMEN 原本ノート]]</li>

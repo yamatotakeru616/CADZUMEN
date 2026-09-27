@@ -76,6 +76,7 @@ body {
   font-weight: 700;
   letter-spacing: -0.02em;
   background: linear-gradient(90deg, #fff, var(--text-muted));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -88,6 +89,11 @@ body {
   border: 1px solid rgba(6, 182, 212, 0.25);
   border-radius: 9999px;
   font-weight: 600;
+}
+
+.badge-blue {
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #60a5fa;
 }
 
 .header-actions {
@@ -189,6 +195,34 @@ body {
   justify-content: space-between;
 }
 
+.section-sub-cyan {
+  font-size: 11px;
+  text-transform: none;
+  color: var(--accent-cyan);
+}
+
+.section-sub-dim {
+  font-size: 11px;
+  text-transform: none;
+  color: var(--text-dim);
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.hint-text {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
 .preset-pills {
   display: flex;
   flex-wrap: wrap;
@@ -278,6 +312,32 @@ body {
   border-radius: 50%;
   display: inline-block;
   margin-right: 6px;
+}
+
+.dot-wall { background: #3b82f6; }
+.dot-door { background: #06b6d4; }
+.dot-room { background: #10b981; }
+.dot-dim { background: #f59e0b; }
+.dot-furn { background: #8b5cf6; }
+.dot-grid { background: #64748b; }
+
+/* Stats */
+.stats-list {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--text-muted);
+}
+
+.stat-val {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.stat-bounds {
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
 }
 
 /* CAD Canvas Area */
@@ -430,6 +490,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .modal-body {
